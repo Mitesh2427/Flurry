@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluffywhirl - Premium Cotton Candy</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        .hero {
+            background: linear-gradient(to bottom, #ffd1dc, #f8b195), url('download.jpeg') center/cover;
+            color: #fff;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        .hero h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+        .hero p {
+            font-size: 24px;
+            margin: 10px 0 30px;
+        }
+        .cta-button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .products, .about, .reviews {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #fff;
+        }
+        .products h2, .about h2, .reviews h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .product-item {
+            display: inline-block;
+            width: 30%;
+            margin: 15px;
+            text-align: center;
+        }
+        .product-item img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .product-item img:hover {
+            transform: scale(1.1);
+        }
+        .product-item h3 {
+            margin-top: 15px;
+            font-size: 24px;
+        }
+        .about {
+            position: relative;
+            width: 50%;
+            margin: 0 auto;
+        }
+        .about img {
+            width: 100%;
+            border-radius: 10px;
+            cursor: pointer;
+            display: none;
+        }
+        .about img.active {
+            display: block;
+        }
+        .footer {
+            background-color: #ffd1dc;
+            padding: 20px;
+            text-align: center;
+        }
+        .footer a {
+            color: #ff6f61;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .footer input[type="email"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <div class="hero">
+    	<h1>Indulge in a Whirl of Flavors with Fluffywhirl!</h1>
+    	<p>Premium Cotton Candy starting at just ₹249 for a 3-pack.</p>
+    	<a href="cart.htm" class="cta-button">Shop Now</a>
+    </div>
+
+
+    <!-- Featured Products -->
+    <div class="products">
+        <h2>Featured Products</h2>
+        <div class="product-item">
+            <img src="berrydelight.jpg" alt="Cotton Candy Flavor 1" height="600">
+            <h3>BERRY DELIGHT</h3>
+            <p>₹249 for a 3-pack</p>
+        </div>
+        <div class="product-item">
+            <img src="celestialcherry.jpg" alt="Cotton Candy Flavor 2" height="600">
+            <h3>CELESTIAL CHERRY</h3>
+            <p>₹249 for a 3-pack</p>
+        </div>
+        <div class="product-item">
+            <img src="mysticalgrapefruit.jpg" alt="Cotton Candy Flavor 3" height="600">
+            <h3>MYSTICAL GRAPEFRUIT</h3>
+            <p>₹249 for a 3-pack</p>
+        </div>
+    </div>
+
+    <!-- About Us -->
+    <div class="about">
+        <h2>About Fluffywhirl</h2>
+        <p>Discover our story and the inspiration behind our unique flavors of premium cotton candy.</p>
+        <img src="old.png" alt="About Us" class="active" onclick="nextImage()">
+        <img src="shop.png" alt="About Us" onclick="nextImage()">
+    </div>
+
+    <!-- Customer Reviews -->
+    <div class="reviews">
+        <h2>What Our Customers Say</h2>
+        <div class="review-item">
+            <p>"Best cotton candy I've ever tasted! The flavors are amazing!"</p>
+            <p>- Happy Customer</p>
+        </div>
+        <div class="review-item">
+            <p>"Perfect for parties and treats. Kids and adults both love it!"</p>
+            <p>- Satisfied Buyer</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>&copy; 2024 Fluffywhirl. All rights reserved.</p>
+      <p>
+	<a href="#">About Us</a> | 
+        <a href="#">Flavors</a> | 
+        <a href="#">Contact Us</a>
+      </p>
+      <p>Follow us:</p>
+      <p>
+        <a href="#"><img src="facebook.png" alt="Facebook" width="30" height="30"></a>
+        <a href="https://www.instagram.com/fluffywhirlofficial/" target="_blank">
+            <img src="insta.jpeg" alt="Instagram" width="35" height="35">
+        </a>
+        <a href="#"><img src="X.png" alt="Twitter" width="30" height="30"></a>
+      </p>
+      <form action="#">
+        <input type="email" placeholder="Subscribe to our newsletter">
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.about img');
+
+        function nextImage() {
+            images[currentImageIndex].classList.remove('active');
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+            images[currentImageIndex].classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
